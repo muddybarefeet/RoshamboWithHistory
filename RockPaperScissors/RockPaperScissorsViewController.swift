@@ -22,7 +22,6 @@ class RockPaperScissorsViewController: UIViewController {
 
 //    1. move is made by user and output passed to thrownDown
     @IBAction func makeYourMove(sender: UIButton) {
-        print("RPS", sender)
         // The RPS enum holds a player's move
         switch (sender) {
         case self.rockButton:
@@ -81,7 +80,7 @@ class RockPaperScissorsViewController: UIViewController {
         } else {
             //Notice that this code works for both Scissors and Paper
             let controller = segue.destinationViewController as! ResultViewController
-            controller.match = self.match
+            controller.match = match
         }
     }
    
@@ -91,7 +90,7 @@ class RockPaperScissorsViewController: UIViewController {
         var controller: HistoryViewController
         controller = storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
         controller.history = history
-        presentViewController(controller, animated: true, completion: nil)
+        navigationController?.pushViewController(controller, animated: true)
     }
-    
 }
+
