@@ -12,14 +12,15 @@ import UIKit
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var returnButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var history = [RPSMatch]()
     
     override func viewDidLoad() {
 //        link the view controller to the datasource and the delegate
-        self.tableView.dataSource = self;
-        self.tableView.delegate = self;
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
     
 //    display the history of the app on the view
@@ -54,7 +55,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
 
     @IBAction func dismissHistory(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+//        self.dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     

@@ -68,7 +68,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="makeYourMove:" destination="iYZ-Mq-4iF" eventType="touchUpInside" id="fGy-X8-GSq"/>
+                                    <action selector="makeYourMove:" destination="iYZ-Mq-4iF" eventType="touchUpInside" id="JCs-ef-ey1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdG-6Q-1de">
@@ -168,6 +168,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QUr-wZ-Xji"/>
                     <connections>
+                        <outlet property="returnButton" destination="8SC-sV-ebP" id="F87-HQ-Hlt"/>
                         <outlet property="tableView" destination="257-tN-2sE" id="jPW-TZ-Fc4"/>
                     </connections>
                 </viewController>

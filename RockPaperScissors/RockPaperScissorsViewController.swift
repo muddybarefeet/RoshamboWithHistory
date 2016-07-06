@@ -20,6 +20,7 @@ class RockPaperScissorsViewController: UIViewController {
     // Here is the history array which will hold the results of each match that is played in a session.
     var history = [RPSMatch]()
 
+
 //    1. move is made by user and output passed to thrownDown
     @IBAction func makeYourMove(sender: UIButton) {
         // The RPS enum holds a player's move
@@ -59,7 +60,7 @@ class RockPaperScissorsViewController: UIViewController {
         
             // Communicate the match
             resultVC.match = self.match
-            self.presentViewController(resultVC, animated: true, completion: nil)
+            navigationController?.showViewController(resultVC, sender: self)
         }
         
         // 2nd Way: Code plus Segue
@@ -90,7 +91,7 @@ class RockPaperScissorsViewController: UIViewController {
         var controller: HistoryViewController
         controller = storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
         controller.history = history
-        navigationController?.pushViewController(controller, animated: true)
+        navigationController?.showViewController(controller, sender: self)
     }
 }
 
