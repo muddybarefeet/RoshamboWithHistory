@@ -29,8 +29,7 @@ class ResultViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        UIView.animateWithDuration(1.5)
-        {
+        UIView.animateWithDuration (1.5) {
             self.resultImageView.alpha = 1;
         }
     }

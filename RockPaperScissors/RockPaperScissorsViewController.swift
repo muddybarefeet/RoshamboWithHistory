@@ -22,7 +22,6 @@ class RockPaperScissorsViewController: UIViewController {
 
 //    1. move is made by user and output passed to thrownDown
     @IBAction func makeYourMove(sender: UIButton) {
-        print("RPS", sender)
         // The RPS enum holds a player's move
         switch (sender) {
         case self.rockButton:
@@ -51,7 +50,7 @@ class RockPaperScissorsViewController: UIViewController {
         history.append(match)
         
         //Here are the 3 ways of presenting a View Controller
-        
+
         // 1st Way: Programmatic View Controller Presentation
         if (playersMove == RPS.Rock) {
             // Get the storyboard and ResultViewController
@@ -66,11 +65,12 @@ class RockPaperScissorsViewController: UIViewController {
         // 2nd Way: Code plus Segue
         else if (playersMove == RPS.Paper) {
             performSegueWithIdentifier("throwDownPaper", sender: self)
+        } else if (playersMove == RPS.Paper) {
+            // 3rd Way: Segue Only, No code!
+            // But don't forget to implement prepareForSegue.
+            performSegueWithIdentifier("throwDownScissors", sender: self)
         }
         
-        // 3rd Way: Segue Only, No code!
-        // But don't forget to implement prepareForSegue.
-//        performSegueWithIdentifier("throwDownScissors", sender: self)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -32,7 +32,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cellId = "historyCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath)
-        print("cell", indexPath)
         let match = history[indexPath.row]
         
         cell.textLabel?.text = victoryStatusDescription(match)
